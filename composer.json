@@ -30,6 +30,26 @@
         "installer-paths": {
             "web/profiles/custom/{$name}/": ["type:drupal-profile"],
             "web/modules/custom/{$name}/": ["type:drupal-custom-module"]
+        },
+        "drupal-scaffold": {
+            "locations": {
+                "web-root": "web/"
+            }
         }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "@composer install-modules"
+        ],
+        "post-update-cmd": [
+            "@composer install-modules"
+        ],
+        "install-modules": [
+            "echo Installing global_profile dependencies...",
+            "vendor/bin/drush cr || true",
+            "vendor/bin/drush pm:enable global_profile -y || true",
+            "if [ ! -f web/sites/default/settings.php ]; then vendor/bin/drush site:install global_profile -y; fi",
+            "vendor/bin/drush cr"
+        ]
     }
 }

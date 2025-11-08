@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Installation requirements for the Global Profile.
+ */
+
+/**
+ * Implements hook_requirements().
+ *
+ * Displays a confirmation message during installation.
+ */
+function global_profile_requirements($phase) {
+  if ($phase === 'install') {
+    return [
+      'global_profile' => [
+        'title' => t('Global Profile'),
+        'value' => t('Profile installation ready.'),
+      ],
+    ];
+  }
+}

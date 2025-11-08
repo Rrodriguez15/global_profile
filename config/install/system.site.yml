@@ -1,0 +1,5 @@
+name: 'Global Drupal Site'
+page:
+  front: '/node'
+langcode: 'en'
+default_langcode: 'en'

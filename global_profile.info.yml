@@ -1,0 +1,42 @@
+name: 'Global Profile'
+type: profile
+description: 'A custom Drupal 10/11 installation profile with my preferred modules and configuration.'
+core_version_requirement: ^10 || ^11
+install:
+  # Core modules
+  - node
+  - block
+  - user
+  - views
+  - views_ui
+  - path
+  - taxonomy
+  - field_ui
+  - media
+  - media_library
+  - responsive_image
+  - editor
+  - ckeditor5
+  - config
+  - config_translation
+
+  # Contrib modules
+  - paragraphs
+  - layout_paragraphs
+  - webform
+  - admin_toolbar
+  - admin_toolbar_tools
+  - devel
+  - pathauto
+  - redirect
+  - metatag
+  - token
+  - simple_sitemap
+
+#  # Custom modules
+#  - my_custom_module_1
+#  - my_custom_module_2
+
+themes:
+  - gin
+base theme: gin

@@ -1,0 +1,35 @@
+{
+    "name": "drbrigs_lab/global_profile",
+    "description": "Reusable Drupal 10 installation profile with contrib and custom modules.",
+    "type": "drupal-profile",
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "drupal/core": "^10",
+        "drupal/paragraphs": "^1.15",
+        "drupal/layout_paragraphs": "^2.0",
+        "drupal/webform": "^6.0",
+        "drupal/admin_toolbar": "^3.4",
+        "drupal/pathauto": "^1.11",
+        "drupal/metatag": "^1.25",
+        "drupal/redirect": "^1.9",
+        "drupal/token": "^1.12",
+        "drupal/simple_sitemap": "^5.0",
+        "drupal/devel": "^5.1"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:rodriguezrobin/my_custom_module_1.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:rodriguezrobin/my_custom_module_2.git"
+        }
+    ],
+    "extra": {
+        "installer-paths": {
+            "web/profiles/custom/{$name}/": ["type:drupal-profile"],
+            "web/modules/custom/{$name}/": ["type:drupal-custom-module"]
+        }
+    }
+}

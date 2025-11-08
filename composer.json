@@ -22,16 +22,6 @@
         "drupal/simple_sitemap": "^5.0",
         "drupal/devel": "^5.1"
     },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "git@github.com:rrodriguez15/global_profile.git"
-        },
-        {
-            "type": "vcs",
-            "url": "git@github.com:rrodriguez15/my_custom_module.git"
-        }
-    ],
     "extra": {
         "installer-paths": {
             "web/profiles/custom/{$name}/": ["type:drupal-profile"],

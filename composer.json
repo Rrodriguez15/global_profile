@@ -1,10 +1,16 @@
 {
-    "name": "drbrigs_lab/global_profile",
-    "description": "Reusable Drupal 10 installation profile with contrib and custom modules.",
+    "name": "rrodriguez15/global_profile",
+    "description": "Reusable Drupal installation profile for Drupal 10 and 11, including common contrib and custom modules.",
     "type": "drupal-profile",
     "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Robin Rodriguez",
+            "email": "rodriguez.robin15@gmail.com"
+        }
+    ],
     "require": {
-        "drupal/core": "^10",
+        "drupal/core": "^10 || ^11",
         "drupal/paragraphs": "^1.15",
         "drupal/layout_paragraphs": "^2.0",
         "drupal/webform": "^6.0",
@@ -19,11 +25,11 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "git@github.com:rodriguezrobin/my_custom_module_1.git"
+            "url": "git@github.com:rrodriguez15/global_profile.git"
         },
         {
             "type": "vcs",
-            "url": "git@github.com:rodriguezrobin/my_custom_module_2.git"
+            "url": "git@github.com:rrodriguez15/my_custom_module.git"
         }
     ],
     "extra": {
@@ -37,19 +43,6 @@
             }
         }
     },
-    "scripts": {
-        "post-install-cmd": [
-            "@composer install-modules"
-        ],
-        "post-update-cmd": [
-            "@composer install-modules"
-        ],
-        "install-modules": [
-            "echo Installing global_profile dependencies...",
-            "vendor/bin/drush cr || true",
-            "vendor/bin/drush pm:enable global_profile -y || true",
-            "if [ ! -f web/sites/default/settings.php ]; then vendor/bin/drush site:install global_profile -y; fi",
-            "vendor/bin/drush cr"
-        ]
-    }
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
